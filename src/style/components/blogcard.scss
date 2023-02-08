@@ -1,0 +1,52 @@
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  overflow: auto;
+  margin: 12px 0;
+  padding: 24px 48px;
+  text-align: start;
+
+  .divider {
+    height: 2px;
+    width: 48px;
+    background-color: var(--text-color-primary);
+  }
+
+  .title {
+    margin-top: 12px;
+    font-size: 20px;
+    color: var(--text-color-primary);
+  }
+
+  .info-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    list-style: none;
+    color: var(--text-color-tertiary);
+  }
+
+  .desc {
+    font-size: 13px;
+    margin: 12px 0;
+    color: var(--text-color-secondary);
+  }
+
+  .read-more {
+    padding: 0;
+    border: none;
+    text-align: start;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--text-color-emphasis);
+    background-color: var(--bg-color);
+  }
+}

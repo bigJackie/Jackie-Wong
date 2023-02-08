@@ -1,0 +1,49 @@
+/* 
+ * color
+ */
+$themes: (
+  light: (
+    text-color-primary: #111,
+    text-color-secondary: #444,
+    text-color-tertiary: #777,
+    text-color-emphasis: #e94328,
+
+    text-hover-color-primary: #777,
+    text-hover-color-secondary: #888,
+    text-hover-color-tertiary: #aaa,
+
+    background-color: #fff,
+  ),
+  dark: (
+    text-color-primary: #bbb,
+    text-color-secondary: #999,
+    text-color-tertiary: #777,
+
+    text-hover-color-primary: #eee,
+    text-hover-color-secondary: #ddd,
+    text-hover-color-tertiary: #ccc,
+
+    background-color: #222,
+  ),
+);
+
+.theme {
+  @each $style, $val in map-get($map: $themes, $key: light) {
+    --#{$style}: #{$val};
+  }
+
+  [theme="dark"] & {
+    @each $style, $val in map-get($map: $themes, $key: dark) {
+      --#{$style}: #{$val};
+    }
+  }
+}
+
+body {
+  margin: 0;
+}
+
+// @import "./styles/flexbox.scss";
+@import "./style/components/basic/navbar.scss";
+@import "./style/components/blogcard.scss";
+@import "./style/views/blog.scss";

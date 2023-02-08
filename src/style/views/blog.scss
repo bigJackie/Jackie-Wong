@@ -1,0 +1,39 @@
+.blog {
+  position: relative;
+  height: calc(100vh - 72px);
+
+  .blog-container {
+    background-color: var(--background-color);
+  }
+
+  .blog-wrapper {
+    position: relative;
+    left: 50%;
+    columns: 2;
+    // display: flex;
+    // justify-content: flex-start;
+    // flex-wrap: wrap;
+    transform: translateX(-50%);
+    width: 60vw;
+
+    .blog-divider {
+      position: absolute;
+      top: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: calc(100% - 96px);
+      background-color: var(--text-color-tertiary);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .blog-divider {
+      display: none;
+    }
+
+    .blog-wrapper {
+      width: 100%;
+      columns: 1;
+    }
+  }
+}
