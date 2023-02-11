@@ -1,0 +1,26 @@
+.scroll-top {
+  position: fixed;
+  @include flex-center;
+  right: 48px;
+  bottom: 48px;
+  width: 48px;
+  height: 48px;
+  z-index: 99;
+  @include text-title;
+  @include clickable;
+  @include anim-up-in-begin;
+  background-color: var(--text-hover-color-tertiary);
+
+  @media screen and (max-width: 480px) {
+    right: 24px;
+    bottom: 24px;
+  }
+
+  &:hover {
+    @include text-title-hover;
+  }
+
+  &.is-show {
+    @include anim-up-in-end;
+  }
+}

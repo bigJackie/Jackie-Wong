@@ -10,7 +10,7 @@ $themes: (
 
     text-hover-color-primary: #777,
     text-hover-color-secondary: #888,
-    text-hover-color-tertiary: #aaa,
+    text-hover-color-tertiary: #ccc,
 
     background-color: #fff,
   ),
@@ -39,11 +39,83 @@ $themes: (
   }
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-// @import "./styles/flexbox.scss";
+@mixin text-title {
+  color: var(--text-color-primary);
+}
+
+@mixin text-content {
+  color: var(--text-color-secondary);
+}
+
+@mixin text-title-hover {
+  color: var(--text-hover-color-primary);
+}
+
+@mixin clickable {
+  cursor: pointer;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin anim-up-in-begin {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin anim-up-in-end {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin anim-right-in-begin {
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin anim-right-in-end {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin anim-left-in-begin {
+  opacity: 0;
+  transform: translateX(20%);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin anim-left-in-end {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin absolute-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin background {
+  background-color: var(--background-color);
+}
+
 @import "./style/components/basic/navbar.scss";
+@import "./style/components/basic/scrollTop.scss";
+@import "./style/components/basic/footer.scss";
 @import "./style/components/blogcard.scss";
 @import "./style/views/blog.scss";
+@import "./style/markdown.scss";

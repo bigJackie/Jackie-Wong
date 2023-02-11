@@ -1,0 +1,46 @@
+---
+title: 新的博客 新的开始
+category: 技术杂烩
+date: 2023-02-03
+---
+
+[toc]
+
+# 新的博客 新的开始
+
+一直想要编写一个属于自己的博客网站，以前尝试着做过，由于一些原因导致只开发了一半而搁置，况且当时的代码能力比较弱，一些组件和功能写的比较臃肿，再之刚开始喜欢加上一些花里胡哨且酷炫但并没什么卵用的功能，也就使得项目变的难以维护。现在想要重回自己最爱的简洁风格。
+
+并且，这几年间 Vue 也从 2.0 升级到了 3.0，重新学习了 vue3 后，发现新的版本确实更香。也尝试了 typescript 和 scss，它们使得完成功能需求更加快速简洁。
+
+由此，便有了这个版本的博客诞生。
+
+## 技术栈
+
+- Vite + Vue3 博客核心框架
+- Vue-Router 路由
+- Vueuse Vue 工具箱
+- I18n 语言国际化
+- Markdown-It Markdown 解析
+- Marterial Symbols 谷歌图标库
+- Netlify 自动化部署
+
+```js
+import { useStorage, usePreferredDark } from "@vueuse/core";
+
+const preferredDark = usePreferredDark();
+const colorSchema = useStorage("color-schema", "auto");
+
+export const isDark = computed({
+  get() {
+    return colorSchema.value === "auto" ? preferredDark.value : colorSchema.value === "dark";
+  },
+  set(v: boolean) {
+    if (v === preferredDark.value) colorSchema.value = "auto";
+    else colorSchema.value = v ? "dark" : "light";
+  },
+});
+
+watch(isDark, v => document.documentElement.classList.toggle("dark", v), { immediate: true });
+```
+
+## 结语

@@ -6,7 +6,6 @@ export const chinese = {
       blog: "博文",
       archive: "归档",
       message: "留言",
-      link: "友链",
     },
   },
 

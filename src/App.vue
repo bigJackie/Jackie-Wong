@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import navBar from "./components/basic/navbar.vue";
+import scrollTop from "./components/basic/scrollTop.vue";
+import blogFooter from "./components/basic/footer.vue";
 </script>
 
 <template>
   <div id="app" class="theme">
-    <nav-bar></nav-bar>
-    <!-- <aside-bar></aside-bar> -->
+    <nav-bar />
+    <scroll-top />
     <router-view />
+    <blog-footer />
   </div>
 </template>
 
@@ -15,6 +18,7 @@ import navBar from "./components/basic/navbar.vue";
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 </style>

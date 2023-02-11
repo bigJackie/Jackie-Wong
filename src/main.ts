@@ -1,14 +1,15 @@
 import { createApp } from "vue";
 
 import App from "./App.vue";
-import router from "./router";
+import router from "./router/index";
 import i18n from "./i18n/index";
 
-import mavonEditor from "mavon-editor";
-import "mavon-editor/dist/css/index.css";
+import post from "./components/basic/post.vue";
 
 const app = createApp(App);
+
+app.component("post", post);
+
 app.use(i18n);
-app.use(mavonEditor);
 app.use(router);
 app.mount("#app");

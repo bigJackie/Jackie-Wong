@@ -10,7 +10,6 @@ const nav_items = [
   { name: "nav.title.blog", src: "/blog" },
   { name: "nav.title.archive", src: "/archive" },
   { name: "nav.title.message", src: "/message" },
-  { name: "nav.title.link", src: "/link" },
 ];
 let light_mode = true;
 let english_mode = false;

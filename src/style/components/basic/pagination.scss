@@ -1,0 +1,30 @@
+.pagination {
+  @include flex-center;
+  padding: 24px;
+  font-size: 24px;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+    padding: 16px 36px;
+    font-size: 20px;
+  }
+
+  .page-nav {
+    margin: 0 8px;
+    @include clickable;
+  }
+
+  .page-item {
+    margin: 0 6px;
+    @include clickable;
+    @include text-title;
+
+    &:hover {
+      color: var(--text-hover-color-primary);
+    }
+
+    &.is-chosen {
+      color: var(--text-color-emphasis);
+    }
+  }
+}
