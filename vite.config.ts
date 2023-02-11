@@ -36,10 +36,6 @@ export default defineConfig({
           itemClass: "j-toc-item",
           linkClass: "j-toc-link",
           listType: "ul",
-          // format: (x, htmlencode) => {
-          // return "<div>ad</div>";
-          // return `<j-doc-toc-link hash="${slugify(htmlencode(x))}">${htmlencode(x)}</j-doc-toc-link>`;
-          // },
         });
       },
     }),

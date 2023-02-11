@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { useGlobalState } from "../store/index";
+import { useGlobalState, Post } from "../store/index";
 import Home from "../views/Home.vue";
 import Blog from "../views/Blog.vue";
 
@@ -18,10 +18,10 @@ for (let i in modules) {
     name: post_path,
     component: modules[item.name]().then(res => {
       blogs.value.push({
-        title: res!.title,
-        category: res!.category,
-        date: res!.date,
-        desc: res!.desc,
+        title: (res as Post).title,
+        category: (res as Post).category,
+        date: (res as Post).date,
+        desc: (res as Post).desc,
         path: post_path,
       });
       return res;
