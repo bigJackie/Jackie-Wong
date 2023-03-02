@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build && copy _redirects dist",
+    "build": "vue-tsc && vite build",
+    "net:build": "vue-tsc && vite build && cp _redirects dist/_redirects",
     "preview": "vite preview",
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
     "cz": "npm run log && git add . && git cz"
