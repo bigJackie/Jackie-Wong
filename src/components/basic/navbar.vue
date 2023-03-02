@@ -3,7 +3,7 @@ import { ref } from "vue";
 /*
  * data
  */
-let blog_name_img = ref("http://blog.jackiewongz.com/resources/pic/blog_title_black.png");
+let blog_name_img = ref("https://share.jackiewongz.com/resources/blog_title_black.png");
 /* navigation */
 const nav_items = [
   { name: "nav.title.home", src: "/" },
@@ -19,11 +19,11 @@ let english_mode = false;
  */
 function themeChange() {
   if (light_mode) {
-    window.document.documentElement.setAttribute("theme", "dark");
-    blog_name_img.value = "http://blog.jackiewongz.com/resources/pic/blog_title_white.png";
+    window.document.documentElement.setAttribute("class", "dark");
+    blog_name_img.value = "https://share.jackiewongz.com/resources/blog_title_white.png";
   } else {
-    window.document.documentElement.setAttribute("theme", "");
-    blog_name_img.value = "http://blog.jackiewongz.com/resources/pic/blog_title_black.png";
+    window.document.documentElement.setAttribute("class", "");
+    blog_name_img.value = "https://share.jackiewongz.com/resources/blog_title_black.png";
   }
   light_mode = !light_mode;
 }
@@ -34,22 +34,27 @@ function langChange() {}
 <template>
   <nav class="nav">
     <img class="nav-img" :src="blog_name_img" />
-    <ul class="nav-items">
+    <!-- <ul class="nav-items">
       <li class="nav-item" v-for="(nav_item, nav_id) in nav_items" :key="nav_id">
         <router-link :to="nav_item.src" class="nav-item-text">
           <span>{{ $t(nav_item.name) }}</span>
         </router-link>
       </li>
-    </ul>
+    </ul> -->
     <div class="nav-actions">
-      <span class="material-symbols-rounded nav-icon">search</span>
-      <span class="material-symbols-rounded nav-icon">translate</span>
-      <span class="material-symbols-rounded nav-icon" @click="themeChange">
-        {{ light_mode ? "light_mode" : "dark_mode" }}
-      </span>
+      <!-- <j-icon class="nav-icon" disabled size="32">mdi-ideogram-cjk-variant</j-icon> -->
+      <a target="_blank" title="github" href="https://github.com/bigJackie/">
+        <j-icon class="nav-icon" color="black" size="32">mdi-github</j-icon>
+      </a>
+      <j-icon color="black" size="32" v-show="light_mode" class="nav-icon" @click="themeChange">
+        mdi-weather-sunny
+      </j-icon>
+      <j-icon color="black" size="32" v-show="!light_mode" class="nav-icon" @click="themeChange">
+        mdi-weather-night
+      </j-icon>
     </div>
     <div class="nav-actions mobile">
-      <span class="material-symbols-rounded nav-icon">menu</span>
+      <j-icon color="black" size="32" class="nav-icon">mdi-menu</j-icon>
     </div>
   </nav>
 </template>

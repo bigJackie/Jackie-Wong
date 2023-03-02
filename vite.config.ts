@@ -5,13 +5,14 @@ import shiki from "markdown-it-shiki";
 import anchor from "markdown-it-anchor";
 import toc from "markdown-it-toc-done-right";
 import { slugify } from "transliteration";
-
+import { AtomCss } from "@jackiew/atomcss";
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
     port: 8888,
   },
   plugins: [
+    AtomCss(),
     vue({
       include: [/\.vue$/, /\.md$/], // <--
     }),

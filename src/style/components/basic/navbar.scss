@@ -75,10 +75,9 @@
     .nav-icon {
       color: var(--text-color-primary);
       &:hover {
-        color: var(--text-hover-color-primary);
+        color: var(--text-hover-color-primary) !important;
       }
       margin: 0 12px;
-      font-size: 28px;
       @include clickable;
     }
   }

@@ -32,7 +32,7 @@ $themes: (
     --#{$style}: #{$val};
   }
 
-  [theme="dark"] & {
+  .dark & {
     @each $style, $val in map-get($map: $themes, $key: dark) {
       --#{$style}: #{$val};
     }
@@ -59,7 +59,7 @@ body {
 }
 
 @mixin clickable {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 @mixin flex-center {

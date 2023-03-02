@@ -17,6 +17,9 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@jackiew/atomcss": "^0.0.0",
+    "@jackiew/jui": "^0.0.0-alpha1",
+    "@mdi/font": "^7.1.96",
     "@vitejs/plugin-vue": "^4.0.0",
     "commitizen": "^4.3.0",
     "commitlint": "^17.4.2",

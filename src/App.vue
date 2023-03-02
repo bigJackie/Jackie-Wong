@@ -5,12 +5,12 @@ import blogFooter from "./components/basic/footer.vue";
 </script>
 
 <template>
-  <div id="app" class="theme">
+  <j-app id="app" class="theme">
     <nav-bar />
     <scroll-top />
     <router-view />
     <blog-footer />
-  </div>
+  </j-app>
 </template>
 
 <style lang="scss">

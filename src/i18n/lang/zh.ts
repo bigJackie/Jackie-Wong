@@ -3,7 +3,7 @@ export const chinese = {
   nav: {
     title: {
       home: "首页",
-      blog: "博文",
+      blog: "博客",
       archive: "归档",
       message: "留言",
     },
