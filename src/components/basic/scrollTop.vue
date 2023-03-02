@@ -5,6 +5,6 @@ const { y } = useScroll(window);
 
 <template>
   <div class="scroll-top" :class="{ 'is-show': y > 100 }" @click="y = 0">
-    <span class="material-symbols-rounded">north</span>
+    <j-icon size="28">mdi-format-vertical-align-top</j-icon>
   </div>
 </template>

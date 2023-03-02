@@ -12,6 +12,7 @@ const modules = import.meta.glob("../../posts/**/*.md");
 for (let i in modules) {
   let item = modules[i];
   const post_path = item.name.replace(/(.*[post]\/)(.*)\..*/gi, "$2");
+  console.log(item);
 
   posts.push({
     path: "/blog/" + post_path,
