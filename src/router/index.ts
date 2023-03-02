@@ -12,7 +12,7 @@ const modules = import.meta.glob("../../posts/**/*.md");
 for (let i in modules) {
   let item = modules[i];
   const post_path = item.name.replace(/(.*[post]\/)(.*)\..*/gi, "$2");
-  console.log(item);
+  console.log(posts);
 
   posts.push({
     path: "/blog/" + post_path,
@@ -28,6 +28,7 @@ for (let i in modules) {
       return res;
     }),
   });
+  console.log(posts);
 }
 
 const router = createRouter({
