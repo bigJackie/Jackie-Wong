@@ -44,14 +44,17 @@ function langChange() {}
     <div class="nav-actions">
       <!-- <j-icon class="nav-icon" disabled size="32">mdi-ideogram-cjk-variant</j-icon> -->
       <a target="_blank" title="github" href="https://github.com/bigJackie/">
-        <j-icon class="nav-icon" color="black" size="32">mdi-github</j-icon>
+        <j-icon class="nav-icon" size="32" icon="github"></j-icon>
       </a>
-      <j-icon color="black" size="32" class="nav-icon" @click="themeChange">
-        {{ light_mode ? "mdi-weather-sunny" : "mdi-weather-night" }}
-      </j-icon>
+      <j-icon
+        size="32"
+        class="nav-icon"
+        @click="themeChange"
+        :icon="light_mode ? 'weather-sunny' : 'weather-night'"
+      ></j-icon>
     </div>
     <div class="nav-actions mobile">
-      <j-icon color="black" size="32" class="nav-icon">mdi-menu</j-icon>
+      <j-icon size="32" class="nav-icon" icon="menu"></j-icon>
     </div>
   </nav>
 </template>

@@ -58,6 +58,11 @@
     */
     .j-toc {
       position: fixed;
+      max-height: 500px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       // right: 96px;
       left: calc(75vw + 12px);
 
@@ -100,7 +105,8 @@
     }
 
     p,
-    ul {
+    ul,
+    ol {
       @include text-content;
     }
 
@@ -121,7 +127,7 @@
     background: #f8f8f8 !important;
   }
 
-  @at-root [theme="dark"] .shiki-light {
+  @at-root .dark .shiki-light {
     display: none;
   }
 
@@ -130,7 +136,7 @@
     background: #0e0e0e !important;
   }
 
-  @at-root [theme="dark"] .shiki-dark {
+  @at-root .dark .shiki-dark {
     display: block;
   }
 }
