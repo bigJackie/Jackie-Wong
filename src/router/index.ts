@@ -13,10 +13,11 @@ for (let i in modules) {
   let item = modules[i];
   const post_path = item.name.replace(/(.*[post]\/)(.*)\..*/gi, "$2");
   modules[item.name]().then(res => {
+    const date = new Date((res as Post).date);
     blogs.value.push({
       title: (res as Post).title,
       category: (res as Post).category,
-      date: (res as Post).date,
+      date: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
       desc: (res as Post).desc,
       path: post_path,
     });

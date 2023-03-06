@@ -9,6 +9,6 @@ export const useGlobalState = createGlobalState(() => {
 export interface Post {
   title: string;
   category: string;
-  date: string;
+  date: Date;
   desc: string;
 }
