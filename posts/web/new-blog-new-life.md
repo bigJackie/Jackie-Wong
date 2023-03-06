@@ -24,23 +24,4 @@ date: 2023-02-03
 - Marterial Symbols 谷歌图标库
 - Netlify 自动化部署
 
-```js
-import { useStorage, usePreferredDark } from "@vueuse/core";
-
-const preferredDark = usePreferredDark();
-const colorSchema = useStorage("color-schema", "auto");
-
-export const isDark = computed({
-  get() {
-    return colorSchema.value === "auto" ? preferredDark.value : colorSchema.value === "dark";
-  },
-  set(v: boolean) {
-    if (v === preferredDark.value) colorSchema.value = "auto";
-    else colorSchema.value = v ? "dark" : "light";
-  },
-});
-
-watch(isDark, v => document.documentElement.classList.toggle("dark", v), { immediate: true });
-```
-
 ## 结语
