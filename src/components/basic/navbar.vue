@@ -11,21 +11,21 @@ const nav_items = [
   { name: "nav.title.archive", src: "/archive" },
   { name: "nav.title.message", src: "/message" },
 ];
-let light_mode = true;
+let light_mode = ref(true);
 let english_mode = false;
 
 /*
  * methods
  */
 function themeChange() {
-  if (light_mode) {
+  if (light_mode.value) {
     window.document.documentElement.setAttribute("class", "dark");
     blog_name_img.value = "https://share.jackiewongz.com/resources/blog_title_white.png";
   } else {
     window.document.documentElement.setAttribute("class", "");
     blog_name_img.value = "https://share.jackiewongz.com/resources/blog_title_black.png";
   }
-  light_mode = !light_mode;
+  light_mode.value = !light_mode.value;
 }
 
 function langChange() {}
@@ -46,11 +46,8 @@ function langChange() {}
       <a target="_blank" title="github" href="https://github.com/bigJackie/">
         <j-icon class="nav-icon" color="black" size="32">mdi-github</j-icon>
       </a>
-      <j-icon color="black" size="32" v-show="light_mode" class="nav-icon" @click="themeChange">
-        mdi-weather-sunny
-      </j-icon>
-      <j-icon color="black" size="32" v-show="!light_mode" class="nav-icon" @click="themeChange">
-        mdi-weather-night
+      <j-icon color="black" size="32" class="nav-icon" @click="themeChange">
+        {{ light_mode ? "mdi-weather-sunny" : "mdi-weather-night" }}
       </j-icon>
     </div>
     <div class="nav-actions mobile">
