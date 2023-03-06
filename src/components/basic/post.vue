@@ -10,7 +10,7 @@ function back() {
 <template>
   <div class="post">
     <div class="back">
-      <j-icon class="back-icon">mdi-chevron-double-left</j-icon>
+      <j-icon class="back-icon" icon="chevron-double-left"></j-icon>
       <span @click="back">返回</span>
     </div>
     <slot></slot>

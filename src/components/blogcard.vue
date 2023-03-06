@@ -26,7 +26,7 @@ const { stop } = useIntersectionObserver(card, ([{ isIntersecting }], observerEl
     <p class="desc">{{ post!.desc }}</p>
     <router-link class="read-more" :to="`\/blog\/${post?.path}`">
       <span>{{ $t("blog.card.read_more") }}</span>
-      <j-icon class="read-more-icon" size="20">mdi-chevron-double-right</j-icon>
+      <j-icon class="read-more-icon" size="20" icon="chevron-double-right"></j-icon>
     </router-link>
   </div>
 </template>
